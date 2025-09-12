@@ -15,16 +15,16 @@
       min-height: 100vh; 
       flex-direction: column;
 
-      /* Fondo degradado animado tipo ola */
-      background: linear-gradient(-45deg, #89f7fe, #66a6ff, #fbc2eb, #a18cd1);
-      background-size: 400% 400%;
-      animation: gradientMove 8s ease infinite;
+      /* Degradado animado real */
+      background: linear-gradient(270deg, #89f7fe, #66a6ff, #fbc2eb, #a18cd1);
+      background-size: 800% 800%;
+      animation: gradientMove 6s ease infinite;
     }
 
     @keyframes gradientMove {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     .login-box { 
@@ -114,6 +114,3 @@
   </script>
 </body>
 </html>
-
-
-

